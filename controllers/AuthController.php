@@ -9,8 +9,12 @@ class AuthController{
 
     public function __construct()
     {
+        header("Access-Control-Allow-Origin: *");
+        header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
+        header("Access-Control-Allow-Headers: Content-Type, Authorization");
         $datebase = new Database();
         $this->db = $datebase->connect();
+        $this->usuario = new Usuario($this->db);
     }
 
     public function showLogin(){
@@ -24,8 +28,17 @@ class AuthController{
     public function login(){
         header('Content-Type: application/json');
         try {
-            throw new Exception('Error Diegosadas das dasd asd asd ');
             
+            $data = json_decode(file_get_contents("php://input"));
+
+            if(empty($data->nombreUsuario) && empty($data->claveUsuario)){
+                throw new Exception('Usuario y Contraseña son requeridos');
+            }   
+
+            $usuario = $this->usuario->login($data->nombreUsuario, $data->claveUsuario);
+
+            var_dump($usuario);
+
         } catch (Exception $e) {
             echo json_encode([
                 'status'=>'error',
