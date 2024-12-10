@@ -25,7 +25,7 @@ if (session_status() === PHP_SESSION_NONE) {
                     <div class="card-body">
                         <h2 class="text-center mb-4">Registro</h2>
                         <div id="registerAlert"></div>
-                        <form id="registerForm" onsubmit="return handleRegister(event)">
+                        <form id="registerForm" onsubmit="register(event)">
                             <div class="mb-3">
                                 <label for="full_name" class="form-label">Nombre Completo</label>
                                 <input type="text" class="form-control" id="full_name" required>
