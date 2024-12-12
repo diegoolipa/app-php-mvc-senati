@@ -23,7 +23,7 @@ async function login(event) {
     }
 
     //Redireccionar a la pagina web
-    window.location.href = "web";
+    window.location.href = "home";
   } catch (error) {
     showAlertAuth("loginAlert", "error", "Error al iniciar sesión: ".error);
     return false;
