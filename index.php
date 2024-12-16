@@ -55,6 +55,10 @@ $router->add('GET','/home','HomeController','index');
 //CRUD PRODUCTOS//
 $router->add('GET','productos/','ProductoController','index');
 $router->add('GET','productos/obtener-todo','ProductoController','obtenerProducto');
+$router->add('POST','productos/guardar-producto','ProductoController','guardarProducto');
+$router->add('POST','productos/actualizar-proucto','ProductoController','actualizarProducto');
+$router->add('DELETE','productos/eliminar-producto','ProductoController','eliminarProducto');
+$router->add('GET','productos/buscar-producto','ProductoController','buscarProducto');
 
 //Despachar la ruta
 try {
