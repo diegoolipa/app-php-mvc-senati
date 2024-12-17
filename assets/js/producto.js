@@ -2,8 +2,8 @@
 //assets/js/producto.js
 
 document.addEventListener('DOMContentLoaded',function(){
-    alert('Diego');
-    obtenerProducto();
+    // // alert('Diego');
+    // obtenerProducto();
 })
 
 async function obtenerProducto() {

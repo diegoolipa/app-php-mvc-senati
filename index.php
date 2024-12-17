@@ -60,6 +60,15 @@ $router->add('POST','productos/actualizar-proucto','ProductoController','actuali
 $router->add('DELETE','productos/eliminar-producto','ProductoController','eliminarProducto');
 $router->add('GET','productos/buscar-producto','ProductoController','buscarProducto');
 
+//CRUD TIPO_DOCUMENTO
+$router->add('GET','tipo-documento/','TipoDocumentoController','mostrarInterfaz');
+$router->add('GET','tipo-documento/listar','TipoDocumentoController','listar');
+$router->add('POST','tipo-documento/guardar','TipoDocumentoController','guardar');
+$router->add('POST','tipo-documento/actualizar','TipoDocumentoController','actualizar');
+$router->add('DELETE','tipo-documento/eliminar','TipoDocumentoController','eliminar');
+$router->add('GET','tipo-documento/buscar','TipoDocumentoController','buscar');
+
+
 //Despachar la ruta
 try {
     $router->dispatch($current_route, $_SERVER['REQUEST_METHOD']);
