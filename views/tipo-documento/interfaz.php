@@ -89,7 +89,7 @@
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
                     <i class="fas fa-times"></i> Cerrar
                 </button>
-                <button type="button" class="btn btn-primary" onclick="crear()">
+                <button type="button" class="btn btn-primary" onclick="guardar()">
                     <i class="fas fa-save"></i> Guardar
                 </button>
             </div>

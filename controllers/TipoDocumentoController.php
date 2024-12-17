@@ -80,7 +80,7 @@ class TipoDocumentoController
                 throw new Exception('id_tipoDocumento no proporcionado');
             }
             $this->tipoDocumento->id_tipodocumento = $data->id_tipoDocumento;
-            
+
             if ($this->tipoDocumento->eliminar()) {
                 echo json_encode([
                     'status' => 'success',
@@ -98,5 +98,33 @@ class TipoDocumentoController
             ]);
         }
     }
+    public function actualizar() {
+        header('Content-Type: application/json');
+        try {
+            if (empty($_POST['nombre']) || empty($_POST['sigla']) || empty($_POST['orden'])) {
+                throw new Exception('Los campos son requeridos');
+            }
 
+            $this->tipoDocumento->id_tipodocumento = $_POST['id'];
+            $this->tipoDocumento->nombre = $_POST['nombre'];
+            $this->tipoDocumento->sigla = $_POST['sigla'];
+            $this->tipoDocumento->orden = $_POST['orden'];
+
+            if ($this->tipoDocumento->actualizar()) {
+                echo json_encode([
+                    'status' => 'success',
+                    'message' => 'Tipo Documento actualizado exitosamente'
+                ]);
+            } else {
+                throw new Exception('Error al actualizar el producto');
+            }
+
+        } catch (Exception $e) {
+            http_response_code(400);
+            echo json_encode([
+                'status' => 'error',
+                'message' => $e->getMessage()
+            ]);
+        }
+    }
 }
