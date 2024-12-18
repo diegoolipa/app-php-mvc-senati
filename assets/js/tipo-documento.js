@@ -1,6 +1,6 @@
-document.addEventListener('DOMContentLoaded',function(){
-    listar();
-})
+// document.addEventListener('DOMContentLoaded',function(){
+//     listar();
+// })
 
 async function listar() {
     try {
@@ -40,7 +40,7 @@ async function listar() {
             tbody.appendChild(tr);
         });
     } catch (error) {
-        showAlert('error', 'Error al cargar los productos: ' + error.message);
+        showAlert('error', 'Error al cargar los productos: ff' + error.message);
     }
 }
 
@@ -50,10 +50,14 @@ async function crear(){
         const nombre = document.getElementById('name').value;
         const sigla = document.getElementById('sigla').value;
         const orden = document.getElementById('orden').value;
+        const fecha = document.getElementById('fecha').value;
+        const fechaHora = document.getElementById('fechaHora').value;
 
         formData.append('nombre', nombre);
         formData.append('sigla', sigla);
         formData.append('orden', orden);
+        formData.append('fecha', fecha);
+        formData.append('fechaHora', fechaHora);
 
         const respuesta = await fetch('tipo-documento/guardar', {
             method: 'POST',
@@ -158,8 +162,6 @@ async function eliminar(id) {
         showAlert('error', error.message);
     }
 }
-
-
 
 function mostrarDataEdit(tipoDoc) {
     console.log(tipoDoc);

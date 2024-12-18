@@ -6,6 +6,8 @@ class TipoDocumento
     public $nombre;
     public $sigla;
     public $orden;
+    public $fecha;
+    public $fecha_hora;
 
     public function __construct($db)
     {
@@ -23,13 +25,15 @@ class TipoDocumento
     public function crear()
     {
         $query = "INSERT INTO tipo_documento  
-                (nombre, sigla, orden) 
-                VALUES (:nombre, :sigla, :orden)";
+                (nombre, sigla, orden, fecha, fecha_hora)
+                VALUES (:nombre, :sigla, :orden, :fecha, :fecha_hora)";
 
         $stmt = $this->conn->prepare($query);
         $stmt->bindParam(':nombre', $this->nombre);
         $stmt->bindParam(':sigla', $this->sigla);
         $stmt->bindParam(':orden', $this->orden);
+        $stmt->bindParam(':fecha', $this->fecha);
+        $stmt->bindParam(':fecha_hora', $this->fecha_hora);
         if ($stmt->execute()) {
             return true;
         }

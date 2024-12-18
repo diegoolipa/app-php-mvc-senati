@@ -1,10 +1,10 @@
 //OBTENER RODUCTO JS
 //assets/js/producto.js
 
-document.addEventListener('DOMContentLoaded',function(){
-    // // alert('Diego');
-    obtenerProducto();
-})
+// document.addEventListener('DOMContentLoaded',function(){
+//     // // alert('Diego');
+//     obtenerProducto();
+// })
 
 async function obtenerProducto() {
     try {
@@ -22,6 +22,8 @@ async function obtenerProducto() {
         tbody.innerHTML = '';
         
         productos.forEach(product => {
+            console.log(product);
+            
             const tr = document.createElement('tr');
             tr.innerHTML = `
                 <td>${product.id_producto}</td>
@@ -51,7 +53,7 @@ async function obtenerProducto() {
             tbody.appendChild(tr);
         });
     } catch (error) {
-        showAlert('error', 'Error al cargar los productos: ' + error.message);
+        showAlert('error', 'Error al cargar los productos: d ' + error.message);
     }
 }
 

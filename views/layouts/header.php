@@ -37,6 +37,12 @@ $userRole = $isAuthenticated ? $_SESSION['rol'] : '';
                     <li class="nav-item">
                         <a class="nav-link" href="<?= BASE_URL ?>">Inicio</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= BASE_URL ?>/productos">Producto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= BASE_URL ?>/tipo-documento">Tipo Doc</a>
+                    </li>
                     <?php if ($isAuthenticated): ?>
                         <li class="nav-item">
                             <a class="nav-link" href="<?= BASE_URL ?>/products">Productos</a>

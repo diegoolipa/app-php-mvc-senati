@@ -83,6 +83,14 @@
                         <label for="orden" class="form-label">Orden</label>
                         <input type="number" class="form-control" id="orden" required>
                     </div>
+                    <div class="mb-3">
+                        <label for="fecha" class="form-label">Fecha</label>
+                        <input type="date" class="form-control" id="fecha" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="fechaHora" class="form-label">Fecha Hora</label>
+                        <input type="datetime-local" class="form-control" id="fechaHora" required>
+                    </div>
                 </form>
             </div>
             <div class="modal-footer">
@@ -96,3 +104,8 @@
         </div>
     </div>
 </div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    listar();
+});
+</script>

@@ -53,6 +53,8 @@ class TipoDocumentoController
             $this->tipoDocumento->nombre = $_POST['nombre'];
             $this->tipoDocumento->sigla = $_POST['sigla'];
             $this->tipoDocumento->orden = $_POST['orden'];
+            $this->tipoDocumento->fecha = $_POST['fecha'];
+            $this->tipoDocumento->fecha_hora = $_POST['fechaHora'];
 
             if ($this->tipoDocumento->crear()) {
                 echo json_encode([
